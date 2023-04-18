@@ -32,7 +32,14 @@ function PlantPage() {
   }
 
   function onUpdatePrice(plant) {
-    console.log("don't worry, this function is working: ", plant)
+    const updatedPlants = plantList.map((item) => {
+      if (item.id === plant.id) {
+        return plant;
+      } else {
+        return item;
+      }
+    })
+    setPlantList(updatedPlants)
   }
 
   const searchedPlants = plantList.filter((plant) => {

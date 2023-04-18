@@ -27,7 +27,23 @@ function PlantCard({ plant, onDelete, onUpdatePrice }) {
 
   function onSubmitNewPrice(e) {
     e.preventDefault();
-    onUpdatePrice(newPrice)
+    const updatePlant = {
+      ...plant,
+      price: newPrice
+    }
+
+    fetch(`http://localhost:6001/plants/${plant.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(updatePlant)
+    })
+    .then(resp => resp.json())
+    .then(data => onUpdatePrice(data))
+
+    // console.log(updatePlant)
+    // onUpdatePrice(updatePlant)
   }
   
   return (
