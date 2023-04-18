@@ -36,6 +36,9 @@ function NewPlantForm({ onSubmit }) {
     .then(resp => resp.json())
     .then(data => onSubmit(data))
 
+    setName("");
+    setImage("");
+    setPrice("");
   };
 
 
