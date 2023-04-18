@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 
-function PlantCard({ plant }) {
+function PlantCard({ plant, onDelete }) {
   const [inStock, setInStock] = useState(true)
   
   function handleClick() {
     setInStock(false);
+  }
+
+  function handleDeleteClick(e) {
+    fetch(`http://localhost:6001/plants/${plant.id}`, {
+      method: "DELETE"
+    })
+    .then(resp => resp.json())
+    .then(data => onDelete(plant.id))
   }
   
   return (
@@ -15,7 +23,10 @@ function PlantCard({ plant }) {
       {inStock ? (
         <button onClick={handleClick} className="primary">In Stock</button>
       ) : (
-        <button>Out of Stock</button>
+        <div>
+          <button>Out of Stock</button>
+          <button onClick={handleDeleteClick} className="primary">Delete</button>
+        </div>
       )}
     </li>
   );

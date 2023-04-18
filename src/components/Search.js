@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Search({ onSearch }) {
-  //const [search, setSearch] = useState("");
 
   function handleSearch(e) {
     onSearch(e.target.value)

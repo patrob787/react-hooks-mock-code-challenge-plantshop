@@ -24,6 +24,13 @@ function PlantPage() {
     setSearch(text);
   }
 
+  function onDelete(id) {
+    const reducedPlants = plantList.filter((plant) => {
+      return plant.id !== id;
+    })
+    setPlantList(reducedPlants)
+  }
+
   const searchedPlants = plantList.filter((plant) => {
     if (plant.name.toLowerCase().includes(search.toLowerCase()))
     return plant;
@@ -33,7 +40,7 @@ function PlantPage() {
     <main>
       <NewPlantForm onSubmit={onSubmit} />
       <Search onSearch={onSearch} />
-      <PlantList plantList={searchedPlants} />
+      <PlantList plantList={searchedPlants} onDelete={onDelete} />
     </main>
   );
 }

@@ -53,6 +53,12 @@
       "image": "https://cdn.costumewall.com/wp-content/uploads/2017/03/groot.jpg",
       "price": "14.99",
       "id": 9
+    },
+    {
+      "name": "Outdoor T-Rex",
+      "image": "https://i.etsystatic.com/19315008/r/il/6076ee/3815729951/il_1588xN.3815729951_9deg.jpg",
+      "price": "1560",
+      "id": 10
     }
   ]
 }
