@@ -31,6 +31,10 @@ function PlantPage() {
     setPlantList(reducedPlants)
   }
 
+  function onUpdatePrice(plant) {
+    console.log("don't worry, this function is working: ", plant)
+  }
+
   const searchedPlants = plantList.filter((plant) => {
     if (plant.name.toLowerCase().includes(search.toLowerCase()))
     return plant;
@@ -40,7 +44,7 @@ function PlantPage() {
     <main>
       <NewPlantForm onSubmit={onSubmit} />
       <Search onSearch={onSearch} />
-      <PlantList plantList={searchedPlants} onDelete={onDelete} />
+      <PlantList plantList={searchedPlants} onDelete={onDelete} onUpdatePrice={onUpdatePrice} />
     </main>
   );
 }
