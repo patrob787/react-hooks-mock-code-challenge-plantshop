@@ -15,9 +15,13 @@ function PlantPage() {
     });
   }, [])
 
+  function onSubmit(plantObj) {
+    setPlantList([...plantList, plantObj])
+  }
+
   return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm onSubmit={onSubmit} />
       <Search />
       <PlantList plantList={plantList} />
     </main>

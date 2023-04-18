@@ -41,6 +41,18 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Audrey II",
+      "image": "https://dafb3cv85j5xj.cloudfront.net/blog/wp-content/uploads/2016/09/audreyII_feat.jpg",
+      "price": "99.99",
+      "id": 8
+    },
+    {
+      "name": "Groot",
+      "image": "https://cdn.costumewall.com/wp-content/uploads/2017/03/groot.jpg",
+      "price": "14.99",
+      "id": 9
     }
   ]
 }
